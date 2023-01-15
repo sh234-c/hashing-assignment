@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int numJewelsInStones(string jewels, string stones) {
+        int n=jewels.size();//n represent the size of jewels
+        int m=stones.size();//m represent the size of stones
+        map<char,int>mp;//we store the jewels in map
+        for(int i=0;i<n;i++){
+            mp[jewels[i]]=1;//jewels store are initialise to 1
+        }
+            int total=0;
+            for(int i=0;i<m;i++){
+                total+=mp[stones[i]];//if char of stones are there in map
+            }
+                return total;
+            
+        }
+        
+    
+};
