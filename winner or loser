@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<vector<int>> findWinners(vector<vector<int>>& matches) {
+        set<int>winner,loser;
+        unordered_map<int,int>tot;
+        for(auto it:matches)
+        winner.insert(it[0]),loser.insert(it[1]),tot[it[1]]++;
+        vector<int>v1,v2;
+        vector<vector<int>>ans;
+        for(auto it:winner)
+        if(tot.find(it)==tot.end())
+        v1.push_back(it);
+        for(auto it:loser)
+        if(tot[it]==1)
+        v2.push_back(it);
+        ans.push_back(v1);
+           ans.push_back(v2);
+           return ans;
+        
+    }
+};
